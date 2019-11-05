@@ -1,6 +1,8 @@
 package fr.hiit.javatraining.streams;
 
 import java.util.*;
+import java.util.stream.Collectors;
+
 import static java.util.stream.Collectors.*;
 
 public class Partitioning {
@@ -22,7 +24,8 @@ public class Partitioning {
         // TODO: implements
         // Convert collection to Stream
         // Partition stream of people into adults (age => 18) and kids
-        return null;
+        return people.stream()
+                .collect(Collectors.partitioningBy(x -> x.getAge() > 18));
     }
 
 }

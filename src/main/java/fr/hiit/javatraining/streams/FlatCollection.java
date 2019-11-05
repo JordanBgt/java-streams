@@ -1,7 +1,9 @@
 package fr.hiit.javatraining.streams;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toList;
 
@@ -25,7 +27,9 @@ public class FlatCollection {
         // Convert collection to Stream
         // Replace list with stream
         // Collect results to a new list
-        return null;
+        return collection.stream()
+                .flatMap(Collection::stream)
+                .collect(Collectors.toList());
     }
 
 }

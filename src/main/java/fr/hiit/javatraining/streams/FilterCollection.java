@@ -2,6 +2,7 @@ package fr.hiit.javatraining.streams;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toList;
 
@@ -25,7 +26,9 @@ public class FilterCollection {
         // Convert collection to Stream
         // Filter elements with length smaller than 4 characters
         // Collect results to a new list
-        return null;
+        return collection.stream()
+                .filter(x -> x.length() < 4)
+                .collect(Collectors.toList());
     }
 
 }

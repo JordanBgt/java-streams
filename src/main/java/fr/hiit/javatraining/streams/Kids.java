@@ -1,6 +1,7 @@
 package fr.hiit.javatraining.streams;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toSet;
 
@@ -21,7 +22,10 @@ public class Kids {
         // Filter kids (under age of 18)
         // Map Person elements to names
         // Collect values to a Set
-        return null;
+        return people.stream()
+                .filter(x -> x.getAge() < 18)
+                .map(Person::getName)
+                .collect(Collectors.toSet());
     }
 
 }

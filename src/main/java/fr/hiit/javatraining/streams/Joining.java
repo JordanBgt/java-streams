@@ -1,6 +1,7 @@
 package fr.hiit.javatraining.streams;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.joining;
 
@@ -27,7 +28,9 @@ public class Joining {
         // Convert collection to Stream
         // Map Person to name
         // Join names
-        return null;
+        return people.stream()
+                .map(Person::getName)
+                .collect(Collectors.joining(", ","Names: ", "."));
     }
 
 }

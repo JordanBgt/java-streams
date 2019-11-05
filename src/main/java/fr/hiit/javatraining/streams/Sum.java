@@ -1,6 +1,7 @@
 package fr.hiit.javatraining.streams;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class Sum {
 
@@ -19,7 +20,9 @@ public class Sum {
         // TODO: implements
         // Convert collection to Stream
         // Sum elements with 0 as starting value
-        return 0;
+        return people.stream()
+                .reduce(Integer::sum)
+                .orElseThrow(NoSuchElementException::new);
     }
 
 }
